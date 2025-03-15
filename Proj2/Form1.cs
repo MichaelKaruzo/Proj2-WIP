@@ -2,15 +2,29 @@ namespace Proj2
 {
     public partial class Form1 : Form
     {
-        public static Form1 Instance2;
-        public string TextBox3;
         public Form1()
         {
             InitializeComponent();
-            Instance2 = this;
-            TextBox3 = textBox3.Text;
+            timer1.Interval = 500;
+            timer1.Tick += Update;
+            timer1.Start();
         }
+        private void Update(object sender, EventArgs e)
+        {
+            if(Data.ResultForm2 != null){ textBox3.Text = Data.ResultForm2; }
+            if(Data.ResultForm3 != null){ textBox3.Text = Data.ResultForm3; }
+            if(Data.ResultForm2 != null && Data.ResultForm3 != null)
+            {
+                int x, y;
+                Int32.TryParse(Data.ResultForm2, out x);
+                Int32.TryParse(Data.ResultForm3, out y);
+                int Result = 0;
 
+                Result = x + y;
+
+                textBox3.Text = Result.ToString();
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
         }
@@ -27,9 +41,17 @@ namespace Proj2
             F3.Show();
 
         }
+        private void textBox3_UpdateTextBox3(object sender, EventArgs e)
+        {
+        }
+        
+        public void label2_Click(object sender, EventArgs e)
+        {
+        }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        { 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

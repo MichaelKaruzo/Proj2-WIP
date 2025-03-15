@@ -20,7 +20,7 @@ namespace Proj2
             Instance = this;
             Var1 = textBox2.Text;
         }
-        private Dictionary<string, string> RememberVal1 = new Dictionary<string, string>();
+        public Dictionary<string, string> RememberVal1 = new Dictionary<string, string>();
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace Proj2
             listBox2.ValueMember = "ID";
             listBox2.DisplayMember = "Name";
 
-            
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,6 +57,16 @@ namespace Proj2
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            Data.ResultForm3 = textBox2.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
