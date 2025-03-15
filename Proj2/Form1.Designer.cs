@@ -1,4 +1,5 @@
-﻿namespace Proj2
+﻿
+namespace Proj2
 {
     partial class Form1
     {
@@ -28,10 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox3 = new TextBox();
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // textBox3
@@ -40,7 +43,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 2;
-            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.TextChanged += textBox3_UpdateTextBox3;
             // 
             // label1
             // 
@@ -71,6 +74,10 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -92,5 +99,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

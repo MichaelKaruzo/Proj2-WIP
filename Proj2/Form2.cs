@@ -14,12 +14,10 @@ namespace Proj2
     public partial class Form2 : Form
     {
         public static Form2 Instance1;
-        public string Result1;
         public Form2()
         {
             InitializeComponent();
             Instance1 = this;
-            Result1 = label6.Text;
         }
         private Dictionary<string, string> RememberVal = new Dictionary<string, string>();
 
@@ -107,10 +105,8 @@ namespace Proj2
 
             Result = x + y;
             label6.Text = Result.ToString();
-            Form1 F1 = new Form1();
+            Data.ResultForm2 = label6.Text;
 
-            F1.TextBox3 = label6.Text;
-            
         }
 
         private void label6_Click(object sender, EventArgs e)
